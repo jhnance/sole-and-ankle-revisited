@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 
 import { COLORS, WEIGHTS } from '../../constants';
 import Logo from '../Logo';
+import Icon from '../Icon';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
 
@@ -31,6 +32,14 @@ const Header = () => {
         </Nav>
         <Side />
       </MainHeader>
+      <MobileHeader>
+        <Logo />
+        <Nav>
+          <Icon id="shopping-bag" size={24} />
+          <Icon id="search" size={24} />
+          <Icon id="menu" size={24} />
+        </Nav>
+      </MobileHeader>
 
       <MobileMenu
         isOpen={showMobileMenu}
@@ -46,12 +55,33 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
+    display: none;
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
+    gap: clamp(2rem, 8vw - 1.75rem, 3rem);
+    margin: 0;
+  }
+`;
+
+const MobileHeader = styled.div`
+  display: none;
+  height: 72px;
+  align-items: center;
+  padding: 0 32px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 const Side = styled.div`
