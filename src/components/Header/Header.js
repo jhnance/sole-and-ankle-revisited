@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, WEIGHTS } from '../../constants';
 import Logo from '../Logo';
 import Icon from '../Icon';
 import SuperHeader from '../SuperHeader';
@@ -63,7 +62,7 @@ const MainHeader = styled.div`
   align-items: baseline;
   padding: 18px 32px;
   height: 72px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+  border-bottom: 1px solid var(--color-gray-300);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
     display: none;
@@ -89,7 +88,8 @@ const MobileHeader = styled.div`
   height: 72px;
   align-items: center;
   padding: 0 32px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+  border-bottom: 1px solid var(--color-gray-300);
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
     display: flex;
     justify-content: space-between;
@@ -104,11 +104,11 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
+  color: var(--color-gray-900);
+  font-weight: var(--font-weight-medium);
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 `;
 

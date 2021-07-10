@@ -3,8 +3,6 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
-import { COLORS } from '../../constants';
-
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
@@ -42,12 +40,12 @@ const CloseButton = styled(UnstyledButton)`
   align-self: flex-end;
   margin-top: 26px;
   margin-right: 16px;
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
 
   &:focus,
   &:focus-visible {
-    color: ${COLORS.secondary};
-    outline: 2px solid ${COLORS.secondary};
+    color: var(--color-secondary);
+    outline: 2px solid var(--color-secondary);
     outline-offset: 2px;
   }
 `;
@@ -77,23 +75,23 @@ const Link = styled.a`
 
   &:focus,
   &:focus-visible {
-    color: ${COLORS.secondary};
-    outline: 2px solid ${COLORS.secondary};
+    color: var(--color-secondary);
+    outline: 2px solid var(--color-secondary);
     outline-offset: 2px;
   }
 `;
 
 const FooterLink = styled(Link)`
-  color: ${COLORS.gray[700]};
+  color: var(--color-gray-700);
 `;
 
 const NavLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
 
   &:hover {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 `;
 
@@ -109,7 +107,7 @@ const Overlay = styled(DialogOverlay)`
 `;
 
 const OverlayContent = styled(DialogContent)`
-  background-color: ${COLORS.white};
+  background-color: var(--color-white);
   margin-left: auto;
   height: 100%;
   width: 300px;
