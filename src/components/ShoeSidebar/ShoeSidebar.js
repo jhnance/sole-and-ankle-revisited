@@ -23,7 +23,11 @@ const Sidebar = () => {
   );
 };
 
-const Wrapper = styled.aside``;
+const Wrapper = styled.aside`
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
+    display: none;
+  }
+`;
 
 const Link = styled.a`
   display: block;

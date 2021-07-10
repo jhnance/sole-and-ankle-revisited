@@ -31,9 +31,7 @@ const ShoeIndex = ({ sortId, setSortId }) => {
         <Breadcrumbs>
           <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
           <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
-          <Breadcrumbs.Crumb href="/sale/shoes">
-            Shoes
-          </Breadcrumbs.Crumb>
+          <Breadcrumbs.Crumb href="/sale/shoes">Shoes</Breadcrumbs.Crumb>
         </Breadcrumbs>
         <Spacer size={42} />
         <ShoeSidebar />
@@ -47,10 +45,23 @@ const Wrapper = styled.div`
   flex-direction: row-reverse;
   align-items: baseline;
   gap: 32px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
+    flex-direction: column-reverse;
+    row-gap: 0;
+  }
 `;
 
 const LeftColumn = styled.div`
   flex-basis: 248px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
+    flex-basis: revert;
+
+    ${Spacer} {
+      display: none;
+    }
+  }
 `;
 
 const MainColumn = styled.div`
