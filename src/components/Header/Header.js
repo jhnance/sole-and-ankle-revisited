@@ -37,7 +37,16 @@ const Header = () => {
         <Nav>
           <Icon id="shopping-bag" size={24} />
           <Icon id="search" size={24} />
-          <Icon id="menu" size={24} />
+          <Icon
+            id="menu"
+            size={24}
+            onClick={() => {
+              setShowMobileMenu(!showMobileMenu);
+            }}
+            style={{
+              cursor: 'pointer',
+            }}
+          />
         </Nav>
       </MobileHeader>
 
