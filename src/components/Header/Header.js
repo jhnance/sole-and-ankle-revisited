@@ -71,9 +71,12 @@ const MainHeader = styled.div`
 `;
 
 const Nav = styled.nav`
+  --min-gap: calc(calc(24 / 16) * 1rem);
+  --max-gap: calc(calc(80 / 16) * 1rem);
   display: flex;
-  gap: 48px;
+  gap: clamp(var(--min-gap), 9.6vw - 4.25rem, var(--max-gap));
   margin: 0px 48px;
+  overflow-x: auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
     gap: clamp(1.1rem, 8vw - 1.75rem, 2.125rem);
