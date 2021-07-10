@@ -84,11 +84,13 @@ const Nav = styled.nav`
 `;
 
 const MobileHeader = styled.div`
+  box-sizing: content-box;
   display: none;
   height: 72px;
   align-items: center;
   padding: 0 32px;
   border-bottom: 1px solid var(--color-gray-300);
+  border-top: 4px solid var(--color-gray-900);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
     display: flex;

@@ -18,15 +18,9 @@ const SuperHeader = () => {
           <Icon id="shopping-bag" strokeWidth={1} />
         </UnstyledButton>
       </Wrapper>
-      <MobileDecorativeBorder />
     </>
   );
 };
-
-const MobileDecorativeBorder = styled.div`
-  height: 4px;
-  background-color: var(--color-gray-900);
-`;
 
 const Wrapper = styled.div`
   display: flex;
