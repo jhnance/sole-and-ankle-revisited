@@ -67,7 +67,7 @@ const Nav = styled.nav`
   margin: 0px 48px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
-    gap: clamp(2rem, 8vw - 1.75rem, 3rem);
+    gap: clamp(1.1rem, 8vw - 1.75rem, 2.125rem);
     margin: 0;
   }
 `;
