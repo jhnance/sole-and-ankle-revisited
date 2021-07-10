@@ -24,6 +24,10 @@ const App = () => {
 
 const Main = styled.main`
   padding: 64px 32px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
+    padding: 48px 32px;
+  }
 `;
 
 export default App;

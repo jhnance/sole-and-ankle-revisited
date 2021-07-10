@@ -77,7 +77,7 @@ const MobileHeader = styled.div`
   height: 72px;
   align-items: center;
   padding: 0 32px;
-
+  border-bottom: 1px solid ${COLORS.gray[300]};
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
     display: flex;
     justify-content: space-between;
