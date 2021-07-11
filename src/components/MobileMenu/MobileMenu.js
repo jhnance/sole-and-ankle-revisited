@@ -15,9 +15,11 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   return (
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
       <OverlayContent>
-        <CloseButton onClick={onDismiss}>
-          <Icon id="close" size={24} />
-        </CloseButton>
+        <CloseButtonWrapper>
+          <CloseButton onClick={onDismiss}>
+            <Icon id="close" size={24} />
+          </CloseButton>
+        </CloseButtonWrapper>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -36,11 +38,17 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   );
 };
 
+const CloseButtonWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+`;
+
 const CloseButton = styled(UnstyledButton)`
-  align-self: flex-end;
-  margin-top: 26px;
-  margin-right: 16px;
+  align-self: flex-start;
   color: var(--color-gray-900);
+  padding: 16px;
 
   &:focus,
   &:focus-visible {
@@ -60,7 +68,9 @@ const Nav = styled.nav`
 
 const Footer = styled.footer`
   display: flex;
+  flex: 1;
   flex-direction: column;
+  justify-content: flex-end;
   row-gap: 14px;
   padding-left: 32px;
   padding-bottom: 32px;
@@ -104,11 +114,12 @@ const Overlay = styled(DialogOverlay)`
   left: 0;
   bottom: 0;
   background-color: hsl(220deg 5% 40% / 0.8);
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const OverlayContent = styled(DialogContent)`
   background-color: var(--color-white);
-  margin-left: auto;
   height: 100%;
   width: 300px;
   display: flex;
