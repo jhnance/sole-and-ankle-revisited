@@ -28,6 +28,10 @@ const Main = styled.main`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}rem) {
     padding: 48px 32px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.phone}rem) {
+    padding: 48px 16px;
+  }
 `;
 
 export default App;
